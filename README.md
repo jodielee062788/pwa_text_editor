@@ -4,13 +4,13 @@
 
 ## Description
 
-This project aims to develop an API for a social network web application where users can share their thoughts, react to friends' thoughts, and create a friend list. The API is built using Express.js for routing, MongoDB for database storage, and Mongoose as the ODM. The primary goal is to understand the construction and structuring of APIs that handle large amounts of unstructured data typical of social networking platforms.
+This project aims to create a text editor as a Progressive Web Application (PWA) that runs seamlessly in the browser. 
 
-The motivation behind this project is to gain practical experience in building APIs for social networking platforms. By utilizing technologies commonly used in full-stack development, such as Express.js and MongoDB, this project aims to provide a hands-on learning experience in designing and implementing a scalable and efficient API.
+The motivation behind this project is to provide users with a reliable tool for creating and storing notes or code snippets, with or without an internet connection. The project employs modern web technologies, including IndexedDB for data persistence, service workers for offline functionality, and webpack for bundling JavaScript files.
 
-### Problem Solving
+### Problem Solving 
 
-The API allows users to perform various actions such as creating, updating, and deleting users and thoughts. Additionally, users can add and remove friends, as well as react to thoughts. The API's flexibility and functionality enable developers to handle complex interactions within a social network environment.
+By creating this project, I've made a text editor that works well anywhere, even when users are offline. This means users can write and access their notes or code snippets whenever they need, boosting productivity whether online or not.
 
 ### Learning
 
@@ -29,34 +29,43 @@ To install and run this project locally, follow these steps:
 
 1. Clone the repository to your local machine.
     
-    git clone git@github.com:jodielee062788/socmed_api.git
+    git clone git@github.com:jodielee062788/pwa_text_editor.git
 
 2. Open the project folder in your code editor.
 
-3. Ensure that MongoDB is installed on your machine.
-
-4. Install the necessary dependencies by running the command:
+3. Install the necessary dependencies by running the command:
 
     ```npm install```
 
-5. Initiate the server using:
-
-    ```npm run dev```
-
 ## Usage
 
-The API offers endpoints for various operations. I'll demonstrate it using Insomnia:
+Once the installation is complete, you can run the application using the following steps:
 
-1. Users: CRUD operations for managing users. Another functionality is the application deletes a user's associated thoughts when the user is deleted.
-2. Thoughts: CRUD operations for managing thoughts.
-3. Reactions: Adding and removing reactions to thoughts.
-4. Friends: Adding and removing friends from a user's friend list.
+1. Start the backend server and serve the client:
 
-    ![Screenshot of API shown in Insomnia](./assets/img/1.png)
+    ```npm run start```
 
-## Walkthrough Video
+2. Open the application in your web browser. Upon opening the text editor, IndexedDB will immediately create a database storage for storing content. Enter your text or code snippets, and the content will be saved automatically. (Screenshots showing manifest file, registered service worker and IndexedDB storage.)
 
-Check out the walkthrough video of this Social Network API [here](https://drive.google.com/file/d/1OPwOVt2s4Byx8GR25s9PNP1MTHd8UUfb/view?usp=sharing/).
+    ![Screenshot of JATE in web browser](./assets/img/1.png)
+
+    ![Screenshot of manifest file](./assets/img/2.png)
+
+    ![Screenshot of indexedDB storage](./assets/img/3.png)
+
+    ![Screenshot of registered service worker](./assets/img/4.png)
+
+3. You can close the text editor and reopen it later to retrieve your saved content from IndexedDB.
+
+4. To install the application as a PWA and download it as an icon on your desktop, click on the Install button provided.
+
+    ![Screenshot of JATE installed in the computer](./assets/img/5.png)
+
+    ![GIF of how to install JATE](./assets/img/gif-pwa.gif) 
+
+## Deployed Application in Render
+
+Check out the deployed application in Render [here](https://pwa-text-editor-1q2i.onrender.com/).
 
 ## Credits
 
