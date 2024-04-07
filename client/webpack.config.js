@@ -10,8 +10,6 @@ module.exports = () => {
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js',
-      editor: './src/js/editor.js',
-      header: './src/js/header.js'
     },
     // Output configuration for webpack bundles
     output: {
