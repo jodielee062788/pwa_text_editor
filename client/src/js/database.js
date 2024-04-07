@@ -14,7 +14,8 @@ const initdb = async () =>
 
 // Function to add content to the database
 export const putDb = async (content) => {
-  try {
+    console.log('PUT to the database');
+
     // Open the database
     const textDb = await openDB('jate', 1);
 
@@ -23,18 +24,14 @@ export const putDb = async (content) => {
     const store = tx.objectStore('jate');
 
     // Add the data to the object store
-    const request = store.add({ content: content });
+    const request = store.put({ value: content });
     const result = await request;
     console.log('Data saved to the database', result);
-
-  } catch (error) {
-    console.error('Error posting data to the database:', error);
-    }
-  };
+  }
 
 // Function to retrieve content from the database
 export const getDb = async () => {
-  try {
+    console.log('GET from the database');
     // Open the database
     const textDb = await openDB('jate', 1);
 
@@ -47,11 +44,7 @@ export const getDb = async () => {
 
     const result = await request;
     console.log('result.value', result);
-    return result;
-
-  } catch (error) {
-    console.error('Error retrieving data from the database:', error);
-    }
+    return result?.value;
   };
 
 initdb();
